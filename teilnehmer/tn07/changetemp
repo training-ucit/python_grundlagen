@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+
+float wert 
+
+
+inputeinheit = input("InputEinheit  Eingabe bitte: ")
+outputeinheit = input("OutputEinheit Eingabe bitte: ")
+neueeinheit = input("Umrechnungseinheit Eingabe bitte: ")
+
+ neuwert float
+ try:
+
+    if wert < 0 and einheit == 'K':
+        print (f"falscher Wert  '{wert}' bei K")
+         exit (1)
+
+    if  neueeinheit == "C" and einheit == 'K':
+        neuwert = wert - 273,15
+
+    print (neuwert)
+
+except:
+
+print("Eingegeben wurde: " + eingabe)
+print("Der Typ ist: " + str(type(eingabe)))
+ergebnis = 4711 + int(eingabe)
+print("Ergebnis ist: " + str(ergebnis))
