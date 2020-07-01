@@ -15,7 +15,7 @@ if ziel != "C" and ziel != "F" and ziel != "K":
     print("Ungültige Einheit")
     exit(3)
 
-if (einheit == "K" and wert < 0) or (einheit == "C" and wert < -273.15) or (einheit == "F" and wert < 459.67):
+if (einheit == "K" and wert < 0) or (einheit == "C" and wert < -273.15) or (einheit == "F" and wert < -459.67):
     print("Zu tiefe Temperatur")
     exit(4)
 
@@ -39,4 +39,4 @@ elif einheit == "F":
     elif ziel == "K":
         result = (fahrenheit + 459.67) / 1.8
 
-print(str(wert) + " " + einheit + " = " + str(result) + " " + ziel)
+print(wert, einheit, "=", result, ziel)
