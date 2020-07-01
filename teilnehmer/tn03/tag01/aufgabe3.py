@@ -47,7 +47,8 @@ while True:
 if einheit_in == einheit_out:
    print("Das war einfach ;-)")
    print(f"{grad} {einheit_in} sind {grad} {einheit_out}")   
-
+   exit()
+   
 grad_in = float(grad)
 if einheit_in == "F":
     if einheit_out == "C":
