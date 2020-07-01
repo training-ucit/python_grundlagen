@@ -2,16 +2,14 @@
 import sys
 
 zielwert = None
+einheit = None
+zieleinheit = None
 
-einheit = input("Bitte Ursprungseinheit angeben (C, F, K): ")
-if einheit not in ["C", "F", "K"]:
-    print("Es geht nur C,F oder K")
-    exit()
+while einheit not in ["C", "F", "K"]:
+    einheit = input("Bitte Ursprungseinheit angeben (C, F, K): ")
 
-zieleinheit = input("Bitte Zieleinheit angeben (C, F, K): ")
-if zieleinheit not in ["C", "F", "K"]:
-    print("Es geht nur C,F oder K")
-    exit()
+while zieleinheit not in ["C", "F", "K"]:
+    zieleinheit = input("Bitte Ursprungseinheit angeben (C, F, K): ")
 
 try:
     eingabe = float(input("Bitte eine Temperatur eingeben: "))
@@ -20,36 +18,36 @@ try:
         exit()
 except:
     print("Fehler: War das eine Zahl?")
+    exit()
 
 print(f"Rechne {eingabe} {einheit} in {zieleinheit} um:")
 
 try:
     if einheit == zieleinheit:
         print(f"Das ist leicht :-) {eingabe} {zieleinheit}")
-        exit()
+    else:
+        if einheit == "C":
+            print("Rechne von Celsius um:")
+            celsius = eingabe
+        elif einheit == "F":
+            print("Rechne von Fahrenheit um:")
+            celsius = 5/9*(eingabe-32)
+        elif einheit == "K":
+            print("Rechne von Kelvin um:")
+            celsius == eingabe-273.15
 
-    if einheit == "C":
-        print("Rechne von Celsius um:")
-        celsius = eingabe
-    if einheit == "F":
-        print("Rechne von Fahrenheit um:")
-        celsius = 5/9*(eingabe-32)
-    if einheit == "K":
-        print("Rechne von Kelvin um:")
-        celsius == eingabe-273.15
+        print(f"Das sind {celsius} C")
 
-    print(f"Das sind {celsius} C")
+        if zieleinheit == "C":
+            print("Rechne in Celsius um")
+            zielwert = celsius
+        elif zieleinheit == "F":
+            print("Rechne in Fahrenheit um")
+            zielwert = (celsius*9/5)+32
+        elif zieleinheit == "K":
+            print("Rechne in Kelvin um:")
+            zielwert = celsius + 273.15
 
-    if zieleinheit == "C":
-        print("Rechne in Celsius um")
-        zielwert = celsius
-    if zieleinheit == "F":
-        print("Rechne in Fahrenheit um")
-        zielwert = (celsius+32)*9/5
-    if zieleinheit == "K":
-        print("Rechne in Kelvin um:")
-        zielwert = celsius + 237.15
-
-    print(f"{eingabe} {einheit} sind {zielwert} {zieleinheit}")
+        print(f"{eingabe} {einheit} sind {zielwert} {zieleinheit}")
 except:
     print("Fehler! ")
