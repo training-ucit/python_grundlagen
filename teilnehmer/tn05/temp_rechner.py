@@ -21,13 +21,13 @@ try:
         if einheitin + einheitout == "cf":
             #print(einheitin + einheitout)
             if tempwert >= -273.15:
-                print(9/5 * tempwert + 32)
+                print(tempwert, "C = ",  (9/5 * tempwert + 32), "F", sep ="")
             else:
                 print("Fehler: unmögliche Temperatur!")
         if einheitin + einheitout == "ck":
             #print(einheitin + einheitout)
             if tempwert >= -273.15:
-                print(tempwert + 273.15)
+                print(tempwert, "C = ", (tempwert + 273.15), "K", sep ="")
             else:
                 print("Fehler: unmögliche Temperatur!")
 
