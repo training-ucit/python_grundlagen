@@ -10,7 +10,7 @@ with open(fname) as f:
     header = f.readline().strip().split(",")
     # Dann die weiteren Zeilen lesen
     for zeile in f:
-        werte = zeile.strip().split(",")
+        werte = zeile.strip().split(",") #  in 2.....x Zeile
         # und ein dict daraus machen ...
         d = {}
         for pos, feld in enumerate(header):
